@@ -1,17 +1,52 @@
-> Task :compileJava
-> Task :processResources NO-SOURCE
-> Task :classes
-> Task :jar
-> Task :startScripts
-> Task :distTar
-> Task :distZip
-> Task :assemble
-> Task :compileTestJava NO-SOURCE
-> Task :processTestResources NO-SOURCE
-> Task :testClasses UP-TO-DATE
-> Task :test NO-SOURCE
-> Task :check UP-TO-DATE
-> Task :build
 
-BUILD SUCCESSFUL in 775ms
-5 actionable tasks: 5 executed
+> Task :compileJava FAILED
+/home/adam/.local/src/jlox/src/main/java/tool/Expr.java:5: error: duplicate class: jlox.Expr
+abstract class Expr {
+         ^
+/home/adam/.local/src/jlox/src/main/java/lox/AstPrinter.java:3: error: cannot find symbol
+class AstPrinter implements Expr.Visitor<String> {
+                                ^
+  symbol:   class Visitor
+  location: class Expr
+/home/adam/.local/src/jlox/src/main/java/lox/AstPrinter.java:5: error: cannot find symbol
+        return expr.accept(this);
+                   ^
+  symbol:   method accept(AstPrinter)
+  location: variable expr of type Expr
+/home/adam/.local/src/jlox/src/main/java/lox/AstPrinter.java:8: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/home/adam/.local/src/jlox/src/main/java/lox/AstPrinter.java:14: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/home/adam/.local/src/jlox/src/main/java/lox/AstPrinter.java:19: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/home/adam/.local/src/jlox/src/main/java/lox/AstPrinter.java:25: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/home/adam/.local/src/jlox/src/main/java/lox/AstPrinter.java:27: error: cannot find symbol
+        return parenthesize(expr.operator.lexeme, expr.right);
+                                ^
+  symbol:   variable operator
+  location: variable expr of type Unary
+/home/adam/.local/src/jlox/src/main/java/lox/AstPrinter.java:36: error: cannot find symbol
+            builder.append(expr.accept(this));
+                               ^
+  symbol:   method accept(AstPrinter)
+  location: variable expr of type Expr
+9 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 596ms
+1 actionable task: 1 executed
