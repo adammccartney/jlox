@@ -1,20 +1,17 @@
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+> Task :jar
+> Task :startScripts
+> Task :distTar
+> Task :distZip
+> Task :assemble
+> Task :compileTestJava NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :check UP-TO-DATE
+> Task :build
 
-> Task :compileJava FAILED
-/home/adam/.local/src/jlox/src/main/java/jlox/AstPrinter.java:3: error: AstPrinter is not abstract and does not override abstract method visitVariableExpr(Variable) in Visitor
-public class AstPrinter implements Expr.Visitor<String> {
-       ^
-1 error
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Execution failed for task ':compileJava'.
-> Compilation failed; see the compiler error output for details.
-
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
-
-* Get more help at https://help.gradle.org
-
-BUILD FAILED in 503ms
-1 actionable task: 1 executed
+BUILD SUCCESSFUL in 588ms
+5 actionable tasks: 5 executed
